@@ -1,0 +1,32 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paypal_MVC3_Sample", "Paypal_MVC3_Sample\Paypal_MVC3_Sample.csproj", "{A59437E0-CEDF-4898-B9F7-F6E6B8B844D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment", "Payment\Payment.csproj", "{A07387FD-5137-431B-8A49-BF89C2C7EB24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Objects", "Objects\Objects.csproj", "{AF76265D-1088-466D-BA1D-C62A41190E37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A59437E0-CEDF-4898-B9F7-F6E6B8B844D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59437E0-CEDF-4898-B9F7-F6E6B8B844D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59437E0-CEDF-4898-B9F7-F6E6B8B844D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59437E0-CEDF-4898-B9F7-F6E6B8B844D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07387FD-5137-431B-8A49-BF89C2C7EB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07387FD-5137-431B-8A49-BF89C2C7EB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07387FD-5137-431B-8A49-BF89C2C7EB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07387FD-5137-431B-8A49-BF89C2C7EB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF76265D-1088-466D-BA1D-C62A41190E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF76265D-1088-466D-BA1D-C62A41190E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF76265D-1088-466D-BA1D-C62A41190E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF76265D-1088-466D-BA1D-C62A41190E37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

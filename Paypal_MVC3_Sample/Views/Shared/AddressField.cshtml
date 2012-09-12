@@ -1,0 +1,31 @@
+﻿@model Objects.Addresse
+<div>
+    <strong>Address:</strong>
+    @Html.ValidationMessageFor(m => m.Identity.Nom)
+    @Html.ValidationMessageFor(m => m.Identity.Prenom)
+    @Html.ValidationMessageFor(m => m.Identity.Genre)
+    @Html.ValidationMessageFor(m => m.MainStreet)
+    @Html.ValidationMessageFor(m => m.PostCode)
+    @Html.ValidationMessageFor(m => m.City)
+    <br />
+    <br />
+    gender, Name, Firstname:
+    <br />@Model.Identity.Genre
+    @Html.HiddenFor(m => m.Identity.Genre)
+    @Html.TextBoxFor(m => m.Identity.Nom)@Html.TextBoxFor(m => m.Identity.Prenom)
+    <br />
+    Main Street:
+    <br />
+    @Html.TextBoxFor(m => m.MainStreet)
+    <br />
+    Sub Street:
+    <br />
+    @Html.TextBoxFor(m => m.SubStreet)
+    <br />
+    Post Code:
+    <br />
+    @Html.TextBoxFor(m => m.PostCode)
+    <br />
+    City:<br />
+    @Html.TextBoxFor(m => m.City)
+</div>

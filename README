@@ -1,0 +1,7 @@
+Paypal MVC3 Sample is a simple mvc3 application showing how to use paypal into it.
+
+It manage a shopping cart, express paypal checkout, but not the shortcut version yet (while the code about it is written it is not mvc compliant yet so comented).
+
+To be able to try it you will need a paypal developper account, and some paypals tests account.
+
+You will need to provide in paypalfunctions.cs your paypal developpers credentials and API.

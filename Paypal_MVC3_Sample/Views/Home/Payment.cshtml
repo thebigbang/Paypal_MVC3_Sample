@@ -1,0 +1,54 @@
+﻿@model Paypal_MVC3_Sample.Models.PaiementModel
+@{
+    ViewBag.Title = "Payment";
+}
+<h2>
+    Payment</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Payment Information</legend>
+        @Html.ValidationMessageFor(m => m.MethodePaiementDefinie)
+        @foreach (string e in Model.MethodePaiement)
+        {
+            @Html.RadioButton("MethodePaiementDefinie", e)@e
+            <br />
+        }
+        <div>
+            <legend>Shipping Address:</legend>
+            @Html.ValidationMessageFor(m => m.AddresseFacturation.Identity.Nom)
+            @Html.ValidationMessageFor(m => m.AddresseFacturation.Identity.Prenom)
+            @Html.ValidationMessageFor(m => m.AddresseFacturation.Identity.Genre)
+            @Html.ValidationMessageFor(m => m.AddresseFacturation.MainStreet)
+            @Html.ValidationMessageFor(m => m.AddresseFacturation.PostCode)
+            @Html.ValidationMessageFor(m => m.AddresseFacturation.City)
+            <br />
+            <br />
+            gender, Name, Firstname:
+            <br />@Model.AddresseFacturation.Identity.Genre
+            @Html.HiddenFor(m => m.AddresseFacturation.Identity.Genre)
+            @Html.TextBoxFor(m => m.AddresseFacturation.Identity.Nom)@Html.TextBoxFor(m => m.AddresseFacturation.Identity.Prenom)
+            <br />
+            Main Street:
+            <br />
+            @Html.TextBoxFor(m => m.AddresseFacturation.MainStreet)
+            <br />
+            Sub Street:
+            <br />
+            @Html.TextBoxFor(m => m.AddresseFacturation.SubStreet)
+            <br />
+            Post Code:
+            <br />
+            @Html.TextBoxFor(m => m.AddresseFacturation.PostCode)
+            <br />
+            City:<br />
+            @Html.TextBoxFor(m => m.AddresseFacturation.City)
+        </div>
+        @{/*todo: move in partial view W errors.*/}
+        <input type="submit" value="Continue (login paypal)" />
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

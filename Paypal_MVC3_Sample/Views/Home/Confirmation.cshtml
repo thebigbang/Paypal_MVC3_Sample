@@ -1,0 +1,16 @@
+﻿@model Paypal_MVC3_Sample.Models.RecapitulatifCommandeModel
+@{
+    ViewBag.Title = "Confirmation";
+}
+<h2>
+    Confirmation</h2>
+<fieldset>
+    <legend>RecapitulatifCommandeModel</legend>
+    @Html.DisplayFor(m => m.Pannier)
+    @Html.DisplayFor(m => m.Paiement)
+    @Html.DisplayFor(m => m.Livraison)
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Valider et Payer ma commande" />
+    }
+</fieldset>

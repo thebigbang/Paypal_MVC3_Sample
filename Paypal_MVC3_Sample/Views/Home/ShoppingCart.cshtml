@@ -1,0 +1,30 @@
+﻿@using Paypal_MVC3_Sample.Models
+@model ShoppingCartModel
+@{
+    ViewBag.Title = "ShoppingCart";
+}
+@{/*check http://stackoverflow.com/questions/6703353/how-to-use-labelfor-on-a-strongly-typed-view-for-a-list for optimisations */}
+<h2>
+    ShoppingCart</h2>
+<fieldset>
+    <legend>Cart Content</legend>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+  
+        foreach (ProductToOrder elem in Model.ProductToOrders)
+        {
+            @Html.TextBoxFor(model => elem.Produits.Nom)
+            @Html.TextBoxFor(model => elem.Quantity)
+            <br />
+        }
+        <p>
+            <input type="submit" value="Checkout" /></p>
+    }
+  <!--  todo: faire ce boutton
+    @using (Html.BeginForm("ExpressCheckout", "Home"))
+    {
+        <input type='image' name='submit' src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif'
+               border='0' align='top' alt='Check out with PayPal' />
+    }-->
+</fieldset>

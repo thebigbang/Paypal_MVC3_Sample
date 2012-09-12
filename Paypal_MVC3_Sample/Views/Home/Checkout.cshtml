@@ -1,0 +1,64 @@
+﻿@using System.Web.Mvc.Html
+@using Objects
+@model Paypal_MVC3_Sample.Models.LivraisonsModel
+@{
+    ViewBag.Title = "Checkout";
+}
+<h2>
+    Shipping Information</h2>
+@using (Html.BeginForm())
+{
+    if (ViewBag.ErrorShippingInfo != null)
+    {
+    <label style="color: red">@ViewBag.ErrorShippingInfo</label>
+    }
+    @Html.ValidationMessageFor(m => m.FournisseurName)
+    <table>
+        <tr>
+            <th>
+            </th>
+        </tr>
+        @foreach (Fournisseur item in Model.Fournisseurs)
+        {
+            <tr>
+                <td>
+                    @Html.RadioButton("FournisseurName", item.Nom)@item.Nom @item.Prix &euro;
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <div>
+        <legend>Shipping Address:</legend>
+        @Html.ValidationMessageFor(m=>m.AddresseLivraison.Identity.Nom)
+        @Html.ValidationMessageFor(m=>m.AddresseLivraison.Identity.Prenom)
+        @Html.ValidationMessageFor(m=>m.AddresseLivraison.Identity.Genre)
+        @Html.ValidationMessageFor(m=>m.AddresseLivraison.MainStreet)
+        @Html.ValidationMessageFor(m=>m.AddresseLivraison.PostCode)
+        @Html.ValidationMessageFor(m=>m.AddresseLivraison.City)
+        <br />
+        <br />
+        gender, Name, Firstname:
+        <br />@Model.AddresseLivraison.Identity.Genre
+        @Html.HiddenFor(m=>m.AddresseLivraison.Identity.Genre)
+        @Html.TextBoxFor(m => m.AddresseLivraison.Identity.Nom)@Html.TextBoxFor(m => m.AddresseLivraison.Identity.Prenom)
+        <br />
+        Main Street:
+        <br />
+        @Html.TextBoxFor(m => m.AddresseLivraison.MainStreet)
+        <br />
+        Sub Street:
+        <br />
+        @Html.TextBoxFor(m => m.AddresseLivraison.SubStreet)
+        <br/>
+        Post Code:
+        <br />
+        @Html.TextBoxFor(m => m.AddresseLivraison.PostCode)
+        <br />
+        City:<br />
+        @Html.TextBoxFor(m => m.AddresseLivraison.City)
+    </div>
+    /*todo: move in partial view W errors.*/
+
+    <input type="submit" value="Payment Information." />
+}
